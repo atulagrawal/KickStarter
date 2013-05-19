@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Mar 4, 2013 12:27:59 AM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="db.Profile" table="new_profile" lazy="false">
+    <class name="db.Profile" table="profile" lazy="false">
         
         <id name="ksId" type="java.lang.Integer">
             <column name="ks_id" />

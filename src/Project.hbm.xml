@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Mar 4, 2013 12:27:59 AM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="db.Project" table="new_project" lazy="false">
+    <class name="db.Project" table="project" lazy="false">
     
         <id name="url" type="string">
             <column name="url" />
