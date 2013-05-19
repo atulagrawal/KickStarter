@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 4, 2013 12:27:59 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="db.Project" table="new_project" lazy="false">
+    
+        <id name="url" type="string">
+            <column name="url" />
+        </id>
+         <property name="backers" type="java.lang.Integer">
+            <column name="backers" />
+        </property>
+        <property name="goal" type="java.lang.Double">
+            <column name="goal" />
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="45" />
+        </property>
+        <property name="pledgedAmount" type="string">
+            <column name="pledgedAmount" length="45" />
+        </property>
+        <property name="percentageRaised" type="string">
+            <column name="percentageRaised" length="45" />
+        </property>
+         <property name="daysToGo" type="string">
+            <column name="daysToGo" length="45" />
+        </property>
+         <property name="duration" type="string">
+            <column name="duration" length="45" />
+        </property>
+        <property name="postedDate" type="string">
+            <column name="postedDate" length="45" />
+        </property>
+        <property name="endedDate" type="string">
+            <column name="endedDate" length="45" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="45" />
+        </property>
+        <property name="proId" type="string">
+            <column name="proId" length="45" />
+        </property>
+         <property name="location" type="string">
+            <column name="location" length="100" />
+        </property>
+         
+         <set name="profiles" table="profile_projects" 
+        	inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="projectId" not-null="true" />
+            </key>
+            <many-to-many entity-name="db.Profile">
+                <column name="profileId" not-null="true" />
+            </many-to-many>
+        </set>
+                
+    </class>
+</hibernate-mapping>

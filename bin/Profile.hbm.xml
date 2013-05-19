@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 4, 2013 12:27:59 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="db.Profile" table="new_profile" lazy="false">
+        
+        <id name="ksId" type="java.lang.Integer">
+            <column name="ks_id" />
+        </id>
+        <property name="url" type="string">
+            <column name="url" length="100" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="joinedDate" type="string">
+            <column name="joinedDate" length="45" />
+        </property>
+        <property name="art" type="java.lang.Integer">
+            <column name="art"/>
+        </property>
+        <property name="comics" type="java.lang.Integer">
+            <column name="comics"/>
+        </property>
+         <property name="dance" type="java.lang.Integer">
+            <column name="dance"/>
+        </property>
+    	 <property name="design" type="java.lang.Integer">
+            <column name="design"/>
+        </property>
+        <property name="fashion" type="java.lang.Integer">
+            <column name="fashion"/>
+        </property>
+         <property name="filmandvideo" type="java.lang.Integer">
+            <column name="filmandvideo"/>
+        </property>
+  		 <property name="food" type="java.lang.Integer">
+            <column name="food"/>
+        </property>
+    	 <property name="games" type="java.lang.Integer">
+            <column name="games"/>
+        </property>
+        <property name="music" type="java.lang.Integer">
+            <column name="music"/>
+        </property>
+         <property name="photography" type="java.lang.Integer">
+            <column name="photography"/>
+        </property>	
+   		 <property name="publishing" type="java.lang.Integer">
+            <column name="publishing"/>
+        </property>
+        <property name="technology" type="java.lang.Integer">
+            <column name="technology"/>
+        </property>
+         <property name="theator" type="java.lang.Integer">
+            <column name="theator"/>
+        </property>	
+   		<property name="location" type="string">
+            <column name="location"/>
+        </property>
+         <property name="totalProjects" type="java.lang.Integer">
+            <column name="totalprojects"/>
+        </property>
+         <property name="created" type="java.lang.Integer">
+            <column name="created"/>
+        </property>
+     	 <set name="projects" table="profile_projects" inverse="true" fetch="select">
+            <key>
+                <column name="profileId" not-null="true" />
+            </key>
+            <many-to-many entity-name="db.Project">
+                <column name="projectId" not-null="true" />
+            </many-to-many>
+        </set>
+               
+    </class>
+</hibernate-mapping>

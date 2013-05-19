@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 4, 2013 12:27:59 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="db.Reward" table="new_reward" catalog="ks">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="project" class="db.Project" fetch="select">
+            <column name="project_id"/>
+        </many-to-one>
+        <property name="amount" type="string">
+            <column name="amount" length="45" />
+        </property>
+        <property name="backers" type="string">
+            <column name="backers" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
